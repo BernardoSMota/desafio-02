@@ -1,0 +1,30 @@
+
+{% include "funcionarios/partials/head.html" %}
+</head> 
+<body>
+
+  <div class="container">
+    <h1>Funcionários</h1>
+    <a class="add-button" href="{% url "funcionarios:create" %}"> <i class="fa-solid fa-plus"></i> Adicionar Funcionário</a>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            <th>Cidade</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for funcionario in funcionarios_list %}
+            {% include "funcionarios/partials/funcionario_row.html" %}       
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>
